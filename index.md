@@ -351,6 +351,8 @@ of code below the Schedule `<h2>` header below with
 
 <hr/>
 
+<h2 id="syllabus">Syllabus</h2>
+{% include other/syllabus.html %}
 
 {% comment %}
 SETUP
