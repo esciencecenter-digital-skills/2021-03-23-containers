@@ -25,3 +25,21 @@ conda install matplotlib
 ```
 
 It worked in the container, lets put it not in the Docekrfile and try to build an image
+
+`Dckerfile`
+```
+FROM jupyter/base-notebook
+
+RUN conda install gdal
+Run conda install matplotlib
+```
+
+Let's build the container and name it jupyter-gdal.
+```sh
+docker build -t jupyter-gdal .
+```
+
+Let's run it. Dont' forget to mount our folder with data we want to visualise
+```sh
+docker run -v $PWD:/home/jovyan/work -p 8888:8888 jupyter-gdal
+```
